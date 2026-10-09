@@ -41,43 +41,43 @@ input[type=range]{width:100%}.row{display:flex;gap:14px;flex-wrap:wrap}.row>*{fl
 <div id="lln" class="big"></div><div class="wrap"><svg id="llnsvg" viewBox="0 0 400 120"></svg></div></div>
 <div id="q1"></div></section>
 
-<section id="s2"><h2>2 · OR, AND &amp; Complement (Venn Diagrams)</h2>
-<div class="note"><b>A OR B (union, A ∪ B):</b> in A, in B, or in both. <b>A AND B (intersection, A ∩ B):</b> in both at once. <b>Complement A′:</b> everything in S that is <i>not</i> in A, so <b>P(A) + P(A′) = 1</b>.</div>
+<section id="s2"><h2>2 · Or, And &amp; Complement (Venn Diagrams)</h2>
+<div class="note"><b>A <b>or</b> B (union, A ∪ B):</b> in A, in B, or in both. <b>A <b>and</b> B (intersection, A ∩ B):</b> in both at once. <b>Complement A′:</b> everything in S that is <i>not</i> in A, so <b>P(A) + P(A′) = 1</b>.</div>
 <div class="try"><b>🔬 Venn explorer.</b> S = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {1,2,3,4,5}, B = {4,5,6,7,8}. Pick a region to shade:<br>
 <span id="vb"></span>
 <div class="wrap"><svg id="venn" viewBox="0 0 400 220"></svg></div><div id="vtx" class="big"></div></div>
 <div id="q2"></div></section>
 
 <section id="s3"><h2>3 · Mutually Exclusive vs Independent</h2>
-<div class="note"><b>Mutually exclusive:</b> A and B cannot happen together, so <b>P(A AND B) = 0</b> (their circles don't overlap).<br>
-<b>Independent:</b> knowing one happened doesn't change the other: <b>P(A|B) = P(A)</b>, or equivalently <b>P(A AND B) = P(A)·P(B)</b>.</div>
-<p>⚠️ These are <b>not</b> the same. In fact, if A and B are mutually exclusive and both have positive probability, they are <b>dependent</b>: if A occurs, B is impossible!</p>
+<div class="note"><b>Mutually exclusive:</b> A <b>and</b> B cannot happen together, so <b>P(A <b>and</b> B) = 0</b> (their circles don't overlap).<br>
+<b>Independent:</b> knowing one happened doesn't change the other: <b>P(A|B) = P(A)</b>, or equivalently <b>P(A <b>and</b> B) = P(A)·P(B)</b>.</div>
+<p>⚠️ These are <b>not</b> the same. In fact, if A <b>and</b> B are mutually exclusive and both have positive probability, they are <b>dependent</b>: if A occurs, B is impossible!</p>
 <p><b>Replacement:</b> sampling <i>with</i> replacement gives independent picks; <i>without</i> replacement gives dependent picks.</p>
 <div class="try"><b>🔬 Overlap check.</b> Using S = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} with A = {1, 2, 3, 4, 5}, B = {4, 5, 6, 7, 8} and C = {7, 9}, choose a pair of events:<br><span id="mb"></span><div id="mtx"></div></div>
 <div id="q3"></div></section>
 
 <section id="s4"><h2>4 · Conditional Probability</h2>
 <div class="note">P(A|B) means "probability of A <b>given</b> B has already happened." The condition <b>shrinks the sample space</b> to B.</div>
-<div class="f">P(A|B) = P(A AND B) ÷ P(B)<span style="display:inline-block;margin-left:3em;font-weight:700;color:var(--no)">where P(B) &gt; 0</span></div>
+<div class="f">P(A|B) = P(A <b>and</b> B) ÷ P(B)<span style="display:inline-block;margin-left:3em;font-weight:700;color:var(--no)">where P(B) &gt; 0</span></div>
 <p>Die roll: A = {2,3}, B = even = {2,4,6}. Within B only 2 is in A, so P(A|B) = 1/3.</p>
 <div class="try"><b>🔬 Shrinking the sample space.</b> Roll one die. Choose the given event B and the target event A:<br>
 Given B: <span id="cb"></span><br>Target A: <span id="ca"></span><div id="ctx"></div></div>
 <div id="q4"></div></section>
 
 <section id="s5"><h2>5 · The Two Basic Rules</h2>
-<div class="row"><div class="note"><b>Addition Rule</b> (OR)<div class="f">P(A OR B) = P(A) + P(B) − P(A AND B)</div>If mutually exclusive: just P(A) + P(B).</div>
-<div class="note"><b>Multiplication Rule</b> (AND)<div class="f">P(A AND B) = P(B)·P(A|B)</div>If independent: P(A)·P(B).</div></div>
+<div class="row"><div class="note"><b>Addition Rule</b> (or)<div class="f">P(A <b>or</b> B) = P(A) + P(B) − P(A <b>and</b> B)</div>If mutually exclusive: just P(A) + P(B).</div>
+<div class="note"><b>Multiplication Rule</b> (and)<div class="f">P(A <b>and</b> B) = P(B)·P(A|B)</div>If independent: P(A)·P(B).</div></div>
 <p><b>Worked example (Felicity):</b> P(Math) = 0.2, P(Speech) = 0.65, P(M|S) = 0.25.<br>
-P(M AND S) = 0.25 × 0.65 = <b>0.1625</b>. P(M OR S) = 0.2 + 0.65 − 0.1625 = <b>0.6875</b>. Since P(M|S) = 0.25 ≠ 0.2 = P(M), they are <b>not independent</b>; and P(M AND S) ≠ 0, so <b>not mutually exclusive</b>.</p>
-<div class="try"><b>🔬 Rule calculator.</b> Set P(A), P(B), and P(A AND B):
+P(M <b>and</b> S) = 0.25 × 0.65 = <b>0.1625</b>. P(M <b>or</b> S) = 0.2 + 0.65 − 0.1625 = <b>0.6875</b>. Since P(M|S) = 0.25 ≠ 0.2 = P(M), they are <b>not independent</b>; and P(M <b>and</b> S) ≠ 0, so <b>not mutually exclusive</b>.</p>
+<div class="try"><b>🔬 Rule calculator.</b> Set P(A), P(B), and P(A <b>and</b> B):
 <div class="row"><label>P(A) = <b id="la">0.50</b><input type="range" id="ra" min="0" max="1" step=".01" value=".5"></label>
 <label>P(B) = <b id="lb">0.40</b><input type="range" id="rb" min="0" max="1" step=".01" value=".4"></label>
-<label>P(A AND B) = <b id="lc">0.20</b><input type="range" id="rc" min="0" max="1" step=".01" value=".2"></label></div>
+<label>P(A <b>and</b> B) = <b id="lc">0.20</b><input type="range" id="rc" min="0" max="1" step=".01" value=".2"></label></div>
 <div id="rtx"></div></div>
 <div id="q5"></div></section>
 
 <section id="s6"><h2>6 · Tree Diagrams</h2>
-<div class="note">A tree shows a sequence of events. <b>Multiply along a branch</b> to get an AND probability; <b>add the branch results</b> that make up an event. Branches leaving each node add to 1.</div>
+<div class="note">A tree shows a sequence of events. <b>Multiply along a branch</b> to get an and probability; <b>add the branch results</b> that make up an event. Branches leaving each node add to 1.</div>
 <div class="try"><b>🔬 Build a tree.</b> Event A happens first, then B.
 <div class="row"><label>P(A) = <b id="ta">0.60</b><input type="range" id="sa" min="0" max="1" step=".01" value=".6"></label>
 <label>P(B|A) = <b id="tb">0.90</b><input type="range" id="sb" min="0" max="1" step=".01" value=".9"></label>
@@ -89,10 +89,10 @@ P(M AND S) = 0.25 × 0.65 = <b>0.1625</b>. P(M OR S) = 0.2 + 0.65 − 0.1625 = <
 <p>Carlos makes 65% of his shots. P(makes 2nd | made 1st) = 0.90.</p><div id="q7"></div></section>
 </main>
 <script>
-const $=id=>document.getElementById(id),f=(x,d=4)=>+x.toFixed(d);let tot=0,got=0;
+const $=id=>document.getElementById(id),f=(x,d=4)=>+x.toFixed(d),bd=s=>s.replace(/\b(and|or)\b/g,'<b>$1</b>');let tot=0,got=0;
 function quiz(id,items){const el=$(id);tot+=items.length;upd();items.forEach((it,i)=>{const d=document.createElement('div');d.className='q';
 d.innerHTML=`<span class="lc">Learning check ${i+1}</span><b class="t">${it.q}</b>`;let done=0;const fb=document.createElement('div');fb.className='fb';
-it.o.forEach((t,j)=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{if(done==2)return;
+it.o.forEach((t,j)=>{const b=document.createElement('button');b.innerHTML=t;b.onclick=()=>{if(done==2)return;
 if(j==it.a){b.className='good';fb.innerHTML='✅ <b>Correct!</b> '+it.w;if(!done)got++;done=2;upd()}
 else{b.className='bad';b.disabled=true;if(!done){done=1;fb.innerHTML='❌ Not quite, try again. <i>Hint: '+it.h+'</i>'}else fb.innerHTML='❌ Still not it. <i>Hint: '+it.h+'</i>'}};d.appendChild(b)});d.appendChild(fb);el.appendChild(d)})}
 function upd(){$('pt').textContent=got+' / '+tot+' correct (first try)';$('pf').style.width=tot?got/tot*100+'%':0}
@@ -103,60 +103,60 @@ const s=pts.length,st=Math.max(1,Math.floor(s/200));let p='';pts.forEach((v,i)=>
 $('llnsvg').innerHTML=`<line x1="0" x2="400" y1="60" y2="60" stroke="#e5534b" stroke-dasharray="4"/><text x="4" y="55" font-size="10" fill="#e5534b">0.5</text><polyline fill="none" stroke="#1f6feb" stroke-width="2" points="${p}"/>`}flip(0);
 /* Venn */
 const A=[1,2,3,4,5],B=[4,5,6,7,8],S=[1,2,3,4,5,6,7,8,9,10];
-const modes={'A':x=>A.includes(x),'B':x=>B.includes(x),'A OR B':x=>A.includes(x)||B.includes(x),'A AND B':x=>A.includes(x)&&B.includes(x),"A′":x=>!A.includes(x),'A AND B′':x=>A.includes(x)&&!B.includes(x)};
+const modes={'A':x=>A.includes(x),'B':x=>B.includes(x),'A or B':x=>A.includes(x)||B.includes(x),'A and B':x=>A.includes(x)&&B.includes(x),"A′":x=>!A.includes(x),'A and B′':x=>A.includes(x)&&!B.includes(x)};
 function venn(m){const t=modes[m],ev=S.filter(t);const c=(o)=>o?'fill:#ffd24d':'fill:var(--card)';
 const reg={out:t(9),a:t(1),b:t(7),ab:t(4)};
 const pos={1:[100,90],2:[85,125],3:[120,140],4:[170,95],5:[175,135],6:[240,90],7:[270,125],8:[235,140],9:[340,60],10:[350,170]};
 let s=`<rect x="5" y="5" width="390" height="210" rx="10" style="${c(reg.out)}" stroke="currentColor"/><circle cx="130" cy="110" r="85" style="${c(reg.a)}" stroke="#1f6feb" stroke-width="3"/><circle cx="240" cy="110" r="85" style="${c(reg.b)}" stroke="#e5534b" stroke-width="3"/><clipPath id="cp"><circle cx="130" cy="110" r="85"/></clipPath><circle cx="240" cy="110" r="85" style="${c(reg.ab)}" clip-path="url(#cp)"/><circle cx="130" cy="110" r="85" fill="none" stroke="#1f6feb" stroke-width="3"/><text x="40" y="30" fill="#1f6feb" font-weight="700">A</text><text x="335" y="30" fill="#e5534b" font-weight="700">B</text><text x="14" y="206" font-size="12" fill="currentColor">S</text>`;
 S.forEach(x=>s+=`<text x="${pos[x][0]}" y="${pos[x][1]}" font-size="17" font-weight="${t(x)?800:400}" fill="${t(x)?'#000':'currentColor'}">${x}</text>`);
-$('venn').innerHTML=s;$('vtx').textContent=`${m} = {${ev.join(', ')}} → P = ${ev.length}/10 = ${ev.length/10}`;
+$('venn').innerHTML=s;$('vtx').innerHTML=bd(`${m} = {${ev.join(', ')}} → P = ${ev.length}/10 = ${ev.length/10}`);
 document.querySelectorAll('#vb button').forEach(b=>b.classList.toggle('on',b.dataset.m==m))}
-Object.keys(modes).forEach(m=>{const b=document.createElement('button');b.textContent=m;b.dataset.m=m;b.onclick=()=>venn(m);$('vb').appendChild(b)});venn('A OR B');
+Object.keys(modes).forEach(m=>{const b=document.createElement('button');b.innerHTML=bd(m);b.dataset.m=m;b.onclick=()=>venn(m);$('vb').appendChild(b)});venn('A or B');
 /* mutually exclusive */
 const prs={'A and B':[A,B,'A','B'],'A and C':[A,[7,9],'A','C'],'Odd and Even':[[1,3,5,7,9],[2,4,6,8,10],'Odd','Even'],'Even and ≥ 6':[[2,4,6,8,10],[6,7,8,9,10],'Even','≥ 6']};
-Object.keys(prs).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.onclick=()=>{const[X,Y,nx,ny]=prs[k],I=X.filter(x=>Y.includes(x)),px=X.length/10,py=Y.length/10,pi=I.length/10;
+Object.keys(prs).forEach(k=>{const b=document.createElement('button');b.innerHTML=bd(k);b.onclick=()=>{const[X,Y,nx,ny]=prs[k],I=X.filter(x=>Y.includes(x)),px=X.length/10,py=Y.length/10,pi=I.length/10;
 document.querySelectorAll('#mb button').forEach(e=>e.classList.toggle('on',e==b));
-$('mtx').innerHTML=`<p>${nx} = {${X}}, ${ny} = {${Y}}<br>${nx} AND ${ny} = {${I}} → P(${nx} AND ${ny}) = ${pi}<br>Mutually exclusive? <b>${pi==0?'Yes':'No'}</b> (P(${nx} AND ${ny}) ${pi==0?'=':'≠'} 0)<br>P(${nx})·P(${ny}) = ${f(px*py)} → Independent? <b>${Math.abs(px*py-pi)<1e-9?'Yes':'No'}</b></p>`};$('mb').appendChild(b)});
+$('mtx').innerHTML=`<p>${nx} = {${X}}, ${ny} = {${Y}}<br>${nx} <b>and</b> ${ny} = {${I}} → P(${nx} <b>and</b> ${ny}) = ${pi}<br>Mutually exclusive? <b>${pi==0?'Yes':'No'}</b> (P(${nx} <b>and</b> ${ny}) ${pi==0?'=':'≠'} 0)<br>P(${nx})·P(${ny}) = ${f(px*py)} → Independent? <b>${Math.abs(px*py-pi)<1e-9?'Yes':'No'}</b></p>`};$('mb').appendChild(b)});
 /* conditional */
 const ev={'Even {2,4,6}':[2,4,6],'Odd {1,3,5}':[1,3,5],'≥ 4 {4,5,6}':[4,5,6],'≤ 3 {1,2,3}':[1,2,3]},tg={'2 or 3':[2,3],'Prime {2,3,5}':[2,3,5],'6':[6],'≥ 5 {5,6}':[5,6]};let cB=ev['Even {2,4,6}'],cA=tg['2 or 3'],bn='Even',an='2 or 3';
 function cond(){const I=cA.filter(x=>cB.includes(x));document.querySelectorAll('#cb button').forEach(b=>b.classList.toggle('on',b.dataset.k==bn));document.querySelectorAll('#ca button').forEach(b=>b.classList.toggle('on',b.dataset.k==an));
 let d='<div style="font-size:1.6rem">';[1,2,3,4,5,6].forEach(x=>d+=`<span style="display:inline-block;width:2.2rem;text-align:center;margin:2px;border-radius:8px;border:2px solid ${cB.includes(x)?'var(--pr)':'var(--bd)'};opacity:${cB.includes(x)?1:.3};background:${cA.includes(x)&&cB.includes(x)?'var(--hl)':'transparent'}">${x}</span>`);
-$('ctx').innerHTML=d+`</div><p>Reduced sample space B has ${cB.length} outcomes; ${I.length} of them are in A.<br><span class="big">P(A|B) = ${I.length}/${cB.length} = ${f(I.length/cB.length)}</span><br>Formula check: P(A AND B)/P(B) = (${I.length}/6)/(${cB.length}/6) = ${f(I.length/cB.length)} ✔</p>`}
+$('ctx').innerHTML=d+`</div><p>Reduced sample space B has ${cB.length} outcomes; ${I.length} of them are in A.<br><span class="big">P(A|B) = ${I.length}/${cB.length} = ${f(I.length/cB.length)}</span><br>Formula check: P(A <b>and</b> B)/P(B) = (${I.length}/6)/(${cB.length}/6) = ${f(I.length/cB.length)} ✔</p>`}
 Object.keys(ev).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.dataset.k=k.split(' ')[0];b.onclick=()=>{cB=ev[k];bn=b.dataset.k;cond()};$('cb').appendChild(b)});
 Object.keys(tg).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.dataset.k=k.split(' ')[0]+(k.startsWith('Prime')?'':'');b.dataset.k=k;b.onclick=()=>{cA=tg[k];an=k;cond()};$('ca').appendChild(b)});an='2 or 3';cond();
 /* rule calc */
 function rule(){let a=+$('ra').value,b=+$('rb').value,c=+$('rc').value;const mx=Math.min(a,b),mn=Math.max(0,a+b-1);c=Math.min(Math.max(c,mn),mx);$('rc').value=c;
 $('la').textContent=a.toFixed(2);$('lb').textContent=b.toFixed(2);$('lc').textContent=c.toFixed(2);
-$('rtx').innerHTML=`P(A OR B) = ${a.toFixed(2)} + ${b.toFixed(2)} − ${c.toFixed(2)} = <span class="big">${f(a+b-c)}</span><br>P(A|B) = ${c.toFixed(2)}/${b.toFixed(2)} = ${b?f(c/b):'undefined'}<br>Mutually exclusive? <b>${c==0?'Yes':'No'}</b> · Independent? <b>${Math.abs(a*b-c)<.005?'Yes (P(A)P(B) = '+f(a*b)+')':'No (P(A)P(B) = '+f(a*b)+')'}</b><br><small>(P(A AND B) can't exceed the smaller of P(A), P(B), so the slider adjusts automatically.)</small>`}
+$('rtx').innerHTML=`P(A <b>or</b> B) = ${a.toFixed(2)} + ${b.toFixed(2)} − ${c.toFixed(2)} = <span class="big">${f(a+b-c)}</span><br>P(A|B) = ${c.toFixed(2)}/${b.toFixed(2)} = ${b?f(c/b):'undefined'}<br>Mutually exclusive? <b>${c==0?'Yes':'No'}</b> · Independent? <b>${Math.abs(a*b-c)<.005?'Yes (P(A)P(B) = '+f(a*b)+')':'No (P(A)P(B) = '+f(a*b)+')'}</b><br><small>(P(A <b>and</b> B) can't exceed the smaller of P(A), P(B), so the slider adjusts automatically.)</small>`}
 ['ra','rb','rc'].forEach(i=>$(i).oninput=rule);rule();
 /* tree */
 function tree(){const a=+$('sa').value,b=+$('sb').value,c=+$('sc').value;$('ta').textContent=a.toFixed(2);$('tb').textContent=b.toFixed(2);$('tc').textContent=c.toFixed(2);
 const r=[a*b,a*(1-b),(1-a)*c,(1-a)*(1-c)],L=['A ∩ B','A ∩ B′','A′ ∩ B','A′ ∩ B′'],y=[40,95,155,210],ln=(x1,y1,x2,y2,t,ty)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="currentColor"/><text x="${(x1+x2)/2-14}" y="${(y1+y2)/2+(ty?-4:12)}" font-size="12" fill="#1f6feb">${t}</text>`;
 let s='<circle cx="15" cy="125" r="4" fill="currentColor"/>'+ln(15,125,150,65,'A '+f(a,2),1)+ln(15,125,150,185,'A′ '+f(1-a,2))+ln(150,65,300,y[0],'B '+f(b,2),1)+ln(150,65,300,y[1],'B′ '+f(1-b,2))+ln(150,185,300,y[2],'B '+f(c,2),1)+ln(150,185,300,y[3],'B′ '+f(1-c,2));
 s+='<text x="143" y="62" font-size="12">A</text><text x="143" y="198" font-size="12">A′</text>';r.forEach((v,i)=>s+=`<text x="308" y="${y[i]+4}" font-size="13">${L[i]} = ${f(v)}</text>`);$('tree').innerHTML=s;
-const pb=r[0]+r[2];$('ttx').innerHTML=`Multiply along branches: P(A AND B) = ${a.toFixed(2)} × ${b.toFixed(2)} = <b>${f(r[0])}</b><br>Add branches ending in B: P(B) = ${f(r[0])} + ${f(r[2])} = <span class="big">${f(pb)}</span><br>Reverse the question: P(A|B) = ${f(r[0])} ÷ ${f(pb)} = <b>${pb?f(r[0]/pb):'—'}</b><br>All four ends add to ${f(r.reduce((x,y)=>x+y),4)} ✔`}
+const pb=r[0]+r[2];$('ttx').innerHTML=`Multiply along branches: P(A <b>and</b> B) = ${a.toFixed(2)} × ${b.toFixed(2)} = <b>${f(r[0])}</b><br>Add branches ending in B: P(B) = ${f(r[0])} + ${f(r[2])} = <span class="big">${f(pb)}</span><br>Reverse the question: P(A|B) = ${f(r[0])} ÷ ${f(pb)} = <b>${pb?f(r[0]/pb):'—'}</b><br>All four ends add to ${f(r.reduce((x,y)=>x+y),4)} ✔`}
 ['sa','sb','sc'].forEach(i=>$(i).oninput=tree);tree();
 /* quizzes */
 quiz('q1',[{q:'A fair die is rolled. What is P(rolling a number greater than 4)?',o:['1/6','2/6 = 1/3','4/6','1/2'],a:1,h:'Count outcomes {5, 6} ÷ 6.',w:'Two outcomes (5, 6) out of 6 equally likely outcomes.'},
 {q:'Which could NOT be a probability?',o:['0','0.75','1.2','1'],a:2,h:'Probabilities lie between 0 and 1.',w:'Probabilities can never exceed 1.'},
 {q:'After 5 heads in a row, a fair coin is flipped again. P(heads) is…',o:['Less than 0.5 (tails is due)','Exactly 0.5','More than 0.5 (hot streak)','Impossible to say'],a:1,h:'Each flip is independent of earlier flips.',w:'The coin has no memory. The law of large numbers describes the long run, not a "correction".'}]);
-quiz('q2',[{q:'S = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {1, 2, 3, 4, 5}, B = {4, 5, 6, 7, 8}. What is A OR B?',o:['{4, 5}','{1,2,3,4,5,6,7,8}','{1,2,3,4,5,4,5,6,7,8}','{9, 10}'],a:1,h:'List each outcome once.',w:'Union = everything in A or B (or both); 4 and 5 are not listed twice.'},
-{q:'Same sets: P(A AND B) = ?',o:['0.2','0.5','0.8','0.3'],a:0,h:'A AND B = {4, 5}.',w:'2 outcomes out of 10 = 0.2.'},
+quiz('q2',[{q:'S = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {1, 2, 3, 4, 5}, B = {4, 5, 6, 7, 8}. What is A <b>or</b> B?',o:['{4, 5}','{1,2,3,4,5,6,7,8}','{1,2,3,4,5,4,5,6,7,8}','{9, 10}'],a:1,h:'List each outcome once.',w:'Union = everything in A <b>or</b> B (or both); 4 and 5 are not listed twice.'},
+{q:'Same sets: P(A <b>and</b> B) = ?',o:['0.2','0.5','0.8','0.3'],a:0,h:'A <b>and</b> B = {4, 5}.',w:'2 outcomes out of 10 = 0.2.'},
 {q:'If P(A) = 0.35, then P(A′) = ?',o:['0.35','0.65','1.35','0.5'],a:1,h:'P(A) + P(A′) = 1.',w:'1 − 0.35 = 0.65.'}]);
 quiz('q3',[{q:'Which pair is mutually exclusive?',o:['Drawing a heart / drawing a king','Drawing a heart / drawing a spade','Even number / number greater than 4 on a die','Rain today / cloudy today'],a:1,h:'Can both happen with one card?',w:'No card is both a heart and a spade. The king of hearts is both a heart and a king.'},
 {q:'Two events with positive probabilities are mutually exclusive. They are…',o:['Always independent','Always dependent','Sometimes independent','Cannot tell'],a:1,h:'If A occurs, what is P(B|A)?',w:'P(B|A) = 0 ≠ P(B), so they are dependent.'},
 {q:'Drawing two cards from a deck WITHOUT replacement. The two draws are…',o:['Independent','Dependent','Mutually exclusive','Complements'],a:1,h:'Does the first card change what remains?',w:'The first card removed changes the probabilities for the second.'}]);
 quiz('q4',[{q:'One die: A = {2,3}, B = {1,2,3,4}. P(A|B) = ?',o:['2/6','2/4','4/6','1/2 of 2/6'],a:1,h:'Divide by outcomes in B, not S.',w:'Reduced sample space B has 4 outcomes; 2 are in A, so 2/4 = 0.5.'},
-{q:'P(A AND B) = 0.12 and P(B) = 0.40. P(A|B) = ?',o:['0.048','0.30','0.52','3.33'],a:1,h:'Use P(A AND B) ÷ P(B).',w:'0.12 ÷ 0.40 = 0.30.'},
-{q:'The condition "given B" means…',o:['We add B to S','The sample space shrinks to B','A and B are independent','B is impossible'],a:1,h:'Think "reduced sample space."',w:'We only consider outcomes where B has occurred.'}]);
-quiz('q5',[{q:'P(M) = 0.2, P(S) = 0.65, P(M AND S) = 0.1625. P(M OR S) = ?',o:['0.85','0.6875','0.1625','0.5'],a:1,h:'Add, then subtract the overlap.',w:'0.2 + 0.65 − 0.1625 = 0.6875.'},
-{q:'A and B are independent with P(A) = 0.5, P(B) = 0.3. P(A AND B) = ?',o:['0.8','0.2','0.15','0.65'],a:2,h:'Independent: multiply.',w:'0.5 × 0.3 = 0.15.'},
-{q:'Mutually exclusive A, B with P(A) = 0.3, P(B) = 0.4. P(A OR B) = ?',o:['0.12','0.7','0.58','0.1'],a:1,h:'P(A AND B) = 0.',w:'No overlap to subtract: 0.3 + 0.4 = 0.7.'}]);
-quiz('q6',[{q:'In a tree, P(A) = 0.5, P(B|A) = 0.2. The branch A → B has probability…',o:['0.7','0.1','0.4','0.25'],a:1,h:'Multiply along the branch.',w:'0.5 × 0.2 = 0.10 = P(A AND B).'},
-{q:'Branches leaving one node (e.g. B and B′ after A) must add to…',o:['0','0.5','1','Depends'],a:2,h:'They cover every possibility.',w:'Complements always sum to 1.'},
-{q:'To find P(B) from a two-stage tree you…',o:['Multiply all branches','Add the branch products that end in B','Pick the largest branch','Subtract the branches'],a:1,h:'B can happen via A or via A′.',w:'P(B) = P(A AND B) + P(A′ AND B).'}]);
+{q:'P(A <b>and</b> B) = 0.12 and P(B) = 0.40. P(A|B) = ?',o:['0.048','0.30','0.52','3.33'],a:1,h:'Use P(A <b>and</b> B) ÷ P(B).',w:'0.12 ÷ 0.40 = 0.30.'},
+{q:'The condition "given B" means…',o:['We add B to S','The sample space shrinks to B','A <b>and</b> B are independent','B is impossible'],a:1,h:'Think "reduced sample space."',w:'We only consider outcomes where B has occurred.'}]);
+quiz('q5',[{q:'P(M) = 0.2, P(S) = 0.65, P(M <b>and</b> S) = 0.1625. P(M <b>or</b> S) = ?',o:['0.85','0.6875','0.1625','0.5'],a:1,h:'Add, then subtract the overlap.',w:'0.2 + 0.65 − 0.1625 = 0.6875.'},
+{q:'A <b>and</b> B are independent with P(A) = 0.5, P(B) = 0.3. P(A <b>and</b> B) = ?',o:['0.8','0.2','0.15','0.65'],a:2,h:'Independent: multiply.',w:'0.5 × 0.3 = 0.15.'},
+{q:'Mutually exclusive A, B with P(A) = 0.3, P(B) = 0.4. P(A <b>or</b> B) = ?',o:['0.12','0.7','0.58','0.1'],a:1,h:'P(A <b>and</b> B) = 0.',w:'No overlap to subtract: 0.3 + 0.4 = 0.7.'}]);
+quiz('q6',[{q:'In a tree, P(A) = 0.5, P(B|A) = 0.2. The branch A → B has probability…',o:['0.7','0.1','0.4','0.25'],a:1,h:'Multiply along the branch.',w:'0.5 × 0.2 = 0.10 = P(A <b>and</b> B).'},
+{q:'Branches leaving one node (e.g. B <b>and</b> B′ after A) must add to…',o:['0','0.5','1','Depends'],a:2,h:'They cover every possibility.',w:'Complements always sum to 1.'},
+{q:'To find P(B) from a two-stage tree you…',o:['Multiply all branches','Add the branch products that end in B','Pick the largest branch','Subtract the branches'],a:1,h:'B can happen via A or via A′.',w:'P(B) = P(A <b>and</b> B) + P(A′ <b>and</b> B).'}]);
 quiz('q7',[{q:'(a) P(both goals) = P(A)·P(B|A) = ?',o:['0.585','0.65','0.4225','0.90'],a:0,h:'0.65 × 0.90.',w:'0.65 × 0.90 = 0.585.'},
-{q:'(b) P(first OR second goal) = 0.65 + 0.65 − 0.585 = ?',o:['1.30','0.715','0.065','0.585'],a:1,h:'Subtract the overlap once.',w:'1.30 − 0.585 = 0.715.'},
-{q:'(c) Independent? Compare P(B|A) = 0.90 with P(B) = 0.65.',o:['Yes, equal','No, 0.90 ≠ 0.65','Yes, both over 0.5','Cannot tell'],a:1,h:'Independent requires P(B|A) = P(B).',w:'They differ, so A and B are dependent (he shoots in streaks).'},
-{q:'(d) Mutually exclusive?',o:['Yes','No, P(A AND B) = 0.585 ≠ 0','Yes, they are dependent','Only if independent'],a:1,h:'Is P(A AND B) zero?',w:'He can make both shots, so they are not mutually exclusive.'}]);
+{q:'(b) P(first or second goal) = 0.65 + 0.65 − 0.585 = ?',o:['1.30','0.715','0.065','0.585'],a:1,h:'Subtract the overlap once.',w:'1.30 − 0.585 = 0.715.'},
+{q:'(c) Independent? Compare P(B|A) = 0.90 with P(B) = 0.65.',o:['Yes, equal','No, 0.90 ≠ 0.65','Yes, both over 0.5','Cannot tell'],a:1,h:'Independent requires P(B|A) = P(B).',w:'They differ, so A <b>and</b> B are dependent (he shoots in streaks).'},
+{q:'(d) Mutually exclusive?',o:['Yes','No, P(A <b>and</b> B) = 0.585 ≠ 0','Yes, they are dependent','Only if independent'],a:1,h:'Is P(A <b>and</b> B) zero?',w:'He can make both shots, so they are not mutually exclusive.'}]);
 </script></body></html>
